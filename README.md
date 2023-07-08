@@ -1,36 +1,40 @@
-1) Implement rest of Company controller functions, all the way down to data access layer
+# Jonas Software Coding Test
+1) Implement the rest of the Company controller functions, all the way down to data access layer.
 
-2) Change all Company controller functions to be asynchronous
+2) Change all Company controller functions to be asynchronous.
 
-3) Create new repository to get and save employee information with the following data model properties:
+3) Create a new repository to get and save employee information with the following data model properties:
+```
+string SiteId,
+string CompanyCode,
+string EmployeeCode,
+string EmployeeName,
+string Occupation,
+string EmployeeStatus,
+string EmailAddress,
+string Phone,
+DateTime LastModified
+```
 
-* string SiteId,
-* string CompanyCode,
-* string EmployeeCode,
-* string EmployeeName,
-* string Occupation,
-* string EmployeeStatus,
-* string EmailAddress,
-* string Phone,
-* DateTime LastModified
+4) Create an employee controller to get the following properties for client side:
+```
+string EmployeeCode,
+string EmployeeName,
+string CompanyName,
+string OccupationName,
+string EmployeeStatus,
+string EmailAddress,
+string PhoneNumber,
+string LastModified
+```
 
-4) Create employee controller to get the following properties for client side:
-
-* string EmployeeCode,
-* string EmployeeName,
-* string CompanyName,
-* string OccupationName,
-* string EmployeeStatus,
-* string EmailAddress,
-* string PhoneNumber,
-* string LastModifiedDateTime
-
-5) Add logger to solution and add proper error handling
+5) Add a logger to your solution and add proper error handling.
 
 ## Testing via Curl Commands
 You can run the application with VSC. Ensure your run configuration is set to use Single startup project and is pointing to WebApi. Then while its running, you can run the following commands in your terminal to test the program.
 
-#Create Company:
+### Create Company:
+```
 curl -X POST -H "Content-Type: application/json" -d '{
     "CompanyName": "Example Company",
     "AddressLine1": "123 Main St",
@@ -53,14 +57,20 @@ curl -X POST -H "Content-Type: application/json" -d '{
     ],
     "LastModified": "2023-07-08T12:34:56"
 }' http://localhost:51480/api/company
+```
 
-#Get Companies
+### Get Companies
+```
 curl -X GET http://localhost:51480/api/company/getall
+```
 
-#Get Company
+### Get Company
+```
 curl -X GET http://your-api-endpoint.com/api/company/1
+```
 
-#Updating a Company
+### Updating a Company
+```
 curl -X PUT -H "Content-Type: application/json" -d '{
     "CompanyName": "Updated Company Name",
     "AddressLine1": "Updated Address Line 1",
@@ -83,6 +93,9 @@ curl -X PUT -H "Content-Type: application/json" -d '{
     ],
     "LastModified": "2023-07-08T12:34:56"
 }' http://your-api-endpoint.com/api/company/1
+```
 
-#Deleting a Company
+### Deleting a Company
+```
 curl -X DELETE http://your-api-endpoint.com/api/company/1
+```
