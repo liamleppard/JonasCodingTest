@@ -16,11 +16,18 @@ namespace WebApi.Controllers
         private readonly IMapper _mapper;
         private readonly ILogger _logger;
 
+        public CompanyController(ICompanyService companyService, IMapper mapper)
+        {
+            _companyService = companyService;
+            _mapper = mapper;
+            _logger = null;
+        }
+
         public CompanyController(ICompanyService companyService, IMapper mapper, ILoggerFactory logger)
         {
             _companyService = companyService;
             _mapper = mapper;
-            _logger = logger.CreateLogger("TodoApi.Controllers.CompanyController"); ;
+            _logger = logger.CreateLogger("JonasCodingTest.WebApi.Controllers.CompanyController");
         }
 
         // GET api/<controller>

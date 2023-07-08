@@ -16,11 +16,18 @@ namespace WebApi.Controllers
         private readonly IMapper _mapper;
         private readonly ILogger _logger;
 
+        public EmployeeController(IEmployeeService employeeService, IMapper mapper)
+        {
+            _employeeService = employeeService;
+            _mapper = mapper;
+            _logger = null;
+        }
+
         public EmployeeController(IEmployeeService employeeService, IMapper mapper, ILoggerFactory logger)
         {
             _employeeService = employeeService;
             _mapper = mapper;
-            _logger = logger.CreateLogger("TodoApi.Controllers.EmployeeController");
+            _logger = logger.CreateLogger("JonasCodingTest.WebApi.Controllers.EmployeeController");
         }
 
         // GET api/<controller>
