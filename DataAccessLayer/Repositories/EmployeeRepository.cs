@@ -53,7 +53,6 @@ namespace DataAccessLayer.Repositories
             if (existingEmployee != null)
             {
                 existingEmployee.EmployeeName = employee.EmployeeName;
-                existingEmployee.EmployeeName = employee.EmployeeName;
                 existingEmployee.OccupationName = employee.OccupationName;
                 existingEmployee.EmployeeStatus = employee.EmployeeStatus;
                 existingEmployee.EmailAddress = employee.EmailAddress;
