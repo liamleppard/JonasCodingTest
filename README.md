@@ -99,3 +99,5 @@ curl -X PUT -H "Content-Type: application/json" -d '{
 ```
 curl -X DELETE http://your-api-endpoint.com/api/company/1
 ```
+
+You can repeat the same steps for the employee endpoints, just replace company with employee.
